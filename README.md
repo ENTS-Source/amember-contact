@@ -4,9 +4,8 @@
 
 aMember Pro plugin that adds a contact link for members
 
-## Installation
+# Installation
 
-1. Upload `ents-contact.php` to your aMember Pro server under `amember/application/default/plugins/misc`
-2. Navigate to the settings page for your installation (`http://yourdomain.com/amember/admin-setup/plugins`)
-3. Enable the `ents-contact` plugin under "Other Plugins"
-4. Configure the plugin by clicking on the "EntsContact" tab, if desired
+1. Download the latest build from [Jenkins](https://ci.t2l.io/job/ENTS%20-%20aMember%20Pro/job/amember-contact/)
+2. Extract the `amember` folder to your aMember Pro root directory
+3. Enable the plugin within aMember Pro (under 'Other Plugins')
