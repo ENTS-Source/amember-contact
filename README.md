@@ -1,4 +1,7 @@
 # amember-contact
+
+[![Build Status](https://ci.t2l.io/job/ENTS%20-%20aMember%20Pro/job/amember-contact/badge/icon)](https://ci.t2l.io/job/ENTS%20-%20aMember%20Pro/job/amember-contact/)
+
 aMember Pro plugin that adds a contact link for members
 
 ## Installation
