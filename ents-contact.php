@@ -31,7 +31,9 @@ class Am_Plugin_EntsContact extends Am_Plugin
         return <<<CUT
 This plugin provides members with a contact link in their member portal. The email address specified above will receive messages when someone submits the available form.
 
-Plugin created by ENTS (https://ents.ca) - Edmonton New Technology Society
+Plugin created by ENTS (Edmonton New Technology Society)
+* Source: https://github.com/ENTS-Source/amember-contact
+* For help and support please contact us: https://ents.ca/contact/
 CUT;
     }
 }
