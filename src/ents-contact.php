@@ -9,27 +9,23 @@ class Am_Plugin_EntsContact extends Am_Plugin
     const PLUGIN_COMM = self::COMM_FREE;
     const PLUGIN_REVISION = "1.0.0";
 
+    function _initSetupForm(Am_Form_Setup $form)
+    {
+        $form->setTitle("ENTS: Contact");
+        $form->addText('send_to_address')->setLabel(___("Send contact to address\nempty - send to administrators"));
+        $form->addFieldsPrefix("misc.ents-contact.");
+    }
+
     function onUserMenu(Am_Event $event)
     {
         $menu = $event->getMenu();
         $menu->addPage(array(
-            'id' => 'ents-contact',
+            'id' => 'ents_contact',
             'controller' => 'ents-contact',
             'action' => 'index',
             'label' => ___('Contact Us'),
             'order' => 1000
         ));
-    }
-
-    function onSetupForms(Am_Event_SetupForms $event)
-    {
-        $form = new Am_Form_Setup("ents-contact");
-        $form->setTitle("ENTS: Contact");
-
-        $form->addText("send_to_address")->setLabel(___("Send to address\nempty - send to administrators"));
-
-        $form->addFieldsPrefix("misc.ents-contact.");
-        $event->addForm($form);
     }
 
     function getReadme()
@@ -88,7 +84,7 @@ class EntsContactController extends Am_Mvc_Controller
         $subject = "[AMP] New message from {$user->getName()}";
         $body = "Hello,\n{$user->getName()} ($from) has sent you a message: \n\n$message";
 
-        $sendTo = $this->getDi()->plugins_misc->get("ents-contact")->getConfig("send_to_address", "");
+        $sendTo = $this->getDi()->plugins_misc->get("ents-contact")->getConfig("send_to_address");
         if (strlen(trim($sendTo)) == 0) {
             $mail->toAdmin();
         } else {
