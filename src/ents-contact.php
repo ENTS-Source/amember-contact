@@ -9,7 +9,7 @@ class Am_Plugin_EntsContact extends Am_Plugin
     const PLUGIN_COMM = self::COMM_FREE;
     const PLUGIN_REVISION = "1.0.0";
 
-    public function _initSetupForm(Am_Form_Setup $form)
+    function _initSetupForm(Am_Form_Setup $form)
     {
         $form->addElement('text', 'ents_contact.send_to_address')->setLabel(___("Send contact to address\nempty - send to administrators"));
     }
